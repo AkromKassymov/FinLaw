@@ -1,0 +1,48 @@
+[
+  {
+    "id": "1",
+    "tab_name": ["Financial", "Финансовые"],
+    "questions": [
+      {
+        "question": ["What is the revenue?", "Каков доход?"],
+        "answer": [
+          "<p>Revenue for the quarter is $1 million</p>",
+          "<p style='color: blue'>Доход за квартал составляет 1 миллион долларов</p>"
+        ]
+      },
+      {
+        "question": ["What is the profit?", "Какова прибыль?"],
+        "answer": [
+          "<p>Profit margin is 20%</p>",
+          "<p>Прибыль составляет 20%</p>"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "tab_name": ["Legal", "Юридические"],
+    "questions": [
+      {
+        "question": [
+          "What are the legal terms?",
+          "Каковы юридические условия?"
+        ],
+        "answer": [
+          "<p>All services adhere to legal standards</p>",
+          "<p>Все услуги соответствуют юридическим стандартам</p>"
+        ]
+      },
+      {
+        "question": [
+          "What is the confidentiality policy?",
+          "Какова политика конфиденциальности?"
+        ],
+        "answer": [
+          "<p>Client data is protected under confidentiality agreement</p>",
+          "<p>Данные клиентов защищены соглашением о конфиденциальности</p>"
+        ]
+      }
+    ]
+  }
+]

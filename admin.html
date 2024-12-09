@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore-compat.js"></script>
+    <link rel="stylesheet" type="text/css" href="admin.css" />
+    <title>Admin</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="inputsView">
+        <input type="text" id="facebookLink" placeholder="facebook link" />
+        <input type="text" id="linkedinLink" placeholder="linkedin link" />
+        <input type="text" id="twitterLink" placeholder="twitter link" />
+        <input type="text" id="instagramLink" placeholder="instagram link" />
+        <button onclick="updateSocial()">submit</button>
+      </div>
+    </div>
+    <div class="wrapper">
+      <div class="sections">
+        <div class="section">
+          <div class="sectionTitle">Posts</div>
+          <div class="addNew" onclick="setModalVisible()">+</div>
+          <div class="allPosts" id="post_view"></div>
+        </div>
+
+        <div class="section">
+          <div class="sectionTitle">Finance</div>
+          <div class="addNew" onclick="openAddQAModalLegal('legal')">+</div>
+          <div class="allPosts" id="legal_view"></div>
+        </div>
+        <div class="section">
+          <div class="sectionTitle">Legal</div>
+          <div class="addNew" onclick="openAddQAModalLegal('finance')">+</div>
+          <div class="allPosts" id="finance_view"></div>
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="modal">
+      <div class="modalView">
+        <p class="title">Add post</p>
+        <input type="text" id="id" placeholder="id" />
+        <input type="text" id="date" placeholder="date" />
+        <input type="text" id="themeEN" placeholder="themeEN" />
+        <input type="text" id="themeAZ" placeholder="themeAZ" />
+        <input type="text" id="titleEN" placeholder="titleEN" />
+        <input type="text" id="titleAZ" placeholder="titleAZ" />
+        <input
+          type="text"
+          id="cardShortDescriptionEN"
+          placeholder="cardShortDescriptionEN"
+        />
+        <input
+          type="text"
+          id="cardShortDescriptionAZ"
+          placeholder="cardShortDescriptionAZ"
+        />
+        <input type="text" id="contentEN" placeholder="contentEN html" />
+        <input type="text" id="contentAZ" placeholder="contentAZ html" />
+        <input type="text" id="img" placeholder="img link" />
+        <button class="submit" onclick="closeModal()">Close</button>
+        <button class="submit" onclick="addPost()">Add</button>
+      </div>
+    </div>
+
+    <div class="modal" id="modalEdit">
+      <div class="modalView">
+        <p class="title">Edit post</p>
+        <div id="editPostValues"></div>
+
+        <button class="submit" onclick="closeModalEdit()">Close</button>
+        <button class="submit" onclick="deletePost()">Delete Post</button>
+        <button class="submit" onclick="updatePost()">Update Post</button>
+      </div>
+    </div>
+
+    <div class="modal" id="openAddQAModalLegal">
+      <div class="modalView">
+        <p class="title">Add Legal Q/A</p>
+        <input
+          type="text"
+          value="legal"
+          id="type"
+          style="display: none"
+          disabled="true"
+        />
+        <input type="text" placeholder="id" id="idLcreate" />
+        <input type="text" placeholder="title en" id="questionEnCreate" />
+        <input type="text" placeholder="title az" id="questionAzCreate" />
+        <input type="text" placeholder="description en" id="answerENCreate" />
+        <input type="text" placeholder="description az" id="answerAZCreate" />
+        <button class="submit" onclick="closeAddQAModalLegal()">Close</button>
+        <button class="submit" onclick="addQA()">Add</button>
+      </div>
+    </div>
+
+    <div class="modal" id="editQAModalLegal">
+      <div class="modalView">
+        <p class="title">Edit Services</p>
+        <div id="editQALegal"></div>
+
+        <button class="submit" onclick="closeLegal()">Close</button>
+        <button class="submit" onclick="deleteLegal()">Delete Q/A Legal</button>
+        <button class="submit" onclick="editLegal()">Update Q/A Legal</button>
+      </div>
+    </div>
+
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-analytics.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyDZkUgYBDOLFoG7yd80m1KfponByNuCeko",
+        authDomain: "finlaw-77c29.firebaseapp.com",
+        projectId: "finlaw-77c29",
+        storageBucket: "finlaw-77c29.firebasestorage.app",
+        messagingSenderId: "778843505793",
+        appId: "1:778843505793:web:3c4462803dc0c7ef543980",
+        measurementId: "G-550RP9DZ3G",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+      firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <script src="admin.js" defer></script>
+  </body>
+</html>

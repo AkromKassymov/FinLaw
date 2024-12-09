@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>FinLaw</title>
+  </head>
+  <body onload="loadCards()">
+    <div class="wrapper" onload="loadLangIndex()">
+      <div class="navbar">
+        <div class="logo">
+          <a href="/index.html">
+            <img src="img/logo.png" alt="logo" />
+          </a>
+        </div>
+        <div class="links">
+          <div class="link" onclick="openNavMenu(1)" id="1">Services</div>
+          <div class="link" onclick="openNavMenu(2)" id="2">About us</div>
+          <div class="link" onclick="openNavMenu(3)" id="3">Careers</div>
+          <div class="link" onclick="openNavMenu(4)" id="4">Blog / News</div>
+        </div>
+        <div class="nav__buttons">
+          <a class="link" href="/contacts.html" id="5">Contacts</a>
+          <div class="link" onclick="showLangDialog()">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <path
+                d="M11.9983 2.01416C10.7053 2.01416 9.2473 5.96416 9.0603 11.0142H14.9363C14.7493 5.96516 13.2913 2.01416 11.9983 2.01416ZM8.84229 2.51416C5.15529 3.74316 2.3793 7.11516 2.0293 11.0142H7.0603C7.1713 7.57516 7.79228 4.52516 8.84229 2.51416ZM15.1543 2.51416C16.2043 4.52516 16.8253 7.57516 16.9363 11.0142H21.9363C21.5743 7.06916 18.8773 3.76516 15.1543 2.51416ZM2.0603 13.0142C2.4203 17.0212 5.20229 20.3042 8.87329 21.5142C7.82429 19.5032 7.1713 16.4532 7.0603 13.0142H2.0603ZM9.0603 13.0142C9.2473 18.0632 10.7053 22.0142 11.9983 22.0142C13.2913 22.0142 14.7493 18.0642 14.9363 13.0142H9.0603ZM16.9363 13.0142C16.8253 16.4532 16.1723 19.5032 15.1233 21.5142C18.8943 20.2312 21.5683 16.8942 21.9363 13.0142H16.9363Z"
+                fill="#434343"
+              />
+            </svg>
+          </div>
+          <div id="langDialog">
+            <div class="langDialogItem" onclick="setLanguage(0)">English</div>
+            <div class="langDialogItem" onclick="setLanguage(1)">
+              Azerbaijan
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="navbar__content" id="navbar__content">
+        <div class="wrapper">
+          <div class="navbar__inner" id="service">
+            <div class="navbar__col">
+              <div class="navbar__col__title" id="6">Legal services</div>
+              <div class="navbar__col__links">
+                <a class="navbar__col__link" href="/service.html" id="7"
+                  >Business Financing and Capital Markets</a
+                >
+                <a class="navbar__col__link" href="/service.html" id="8"
+                  >Commerical and IP Contracting Solutions</a
+                >
+                <a class="navbar__col__link" href="/service.html" id="9"
+                  >Competition Law Services</a
+                >
+                <a class="navbar__col__link" href="/service.html" id="10"
+                  >Corporate Governance and Compliance</a
+                >
+                <a class="navbar__col__link" href="/service.html" id="11"
+                  >Mergers & Acquisitions</a
+                >
+                <a class="navbar__col__link" href="/service.html" id="12"
+                  >Family Office and Private Client Legal Solutions</a
+                >
+                <a class="navbar__col__link" href="/service.html" id="13"
+                  >International Business Reorganizations</a
+                >
+              </div>
+            </div>
+
+            <div class="navbar__col">
+              <div class="navbar__col__title"></div>
+              <div class="navbar__col__links">
+                <a class="navbar__col__link" href="/service.html" id="14"
+                  >Workforce Mobility</a
+                >
+                <a class="navbar__col__link" href="/service.html" id="15"
+                  >Real Estate Solutions</a
+                >
+                <a class="navbar__col__link" href="/service.html" id="16"
+                  >Regulatory Advisory and Compliance</a
+                >
+                <a class="navbar__col__link" href="/service.html" id="17"
+                  >Workforce Compliance, Change and Advisory</a
+                >
+                <a class="navbar__col__link" href="/service.html" id="18"
+                  >Public Private Partnership (PPP)</a
+                >
+                <a class="navbar__col__link" href="/service.html" id="19"
+                  >Environmental, Social and Governance Solutions</a
+                >
+                <a class="navbar__col__link" href="/service.html" id="20"
+                  >Sanctions and Trade Restrictions advice</a
+                >
+              </div>
+            </div>
+
+            <div class="navbar__col">
+              <div class="navbar__col__title" id="21">Financial services</div>
+              <div class="navbar__col__links">
+                <a class="navbar__col__link" href="/service.html" id="22"
+                  >TBD</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="navbar__inner" id="about">
+            <div class="navbar__col">
+              <div class="navbar__col__title"></div>
+              <div class="navbar__col__links">
+                <a class="navbar__col__link" href="/about.html" id="23"
+                  >Who we are</a
+                >
+                <a class="navbar__col__link" href="/about.html" id="24"
+                  >Governance & Compliance</a
+                >
+              </div>
+            </div>
+
+            <div class="navbar__col">
+              <div class="navbar__col__title"></div>
+              <div class="navbar__col__links">
+                <div class="navbar__news__card">
+                  <div class="navbar__news__card__left">
+                    <img
+                      src="img/blogimg1.jpg"
+                      alt="blogimg1"
+                      class="blogimg1"
+                    />
+                  </div>
+                  <div class="navbar__news__card__right">
+                    <div class="news__card__right__top">
+                      <div class="date" id="25">Socials</div>
+                      <div class="date" id="26">10.09.2024</div>
+                    </div>
+                    <div class="news__card__right__bottom">
+                      <div class="card__nav__title" id="27">
+                        Who Won the Race?
+                      </div>
+                      <div class="card__nav__text" id="28">
+                        We can sometimes use logic to stretch a little
+                        information a long way. Can these small clues tell us
+                        everything we need to know about who won this
+                        competition?
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="navbar__inner" id="career">
+            <div class="navbar__col">
+              <div class="navbar__col__title"></div>
+              <div class="navbar__col__links">
+                <a class="navbar__col__link" href="/career.html" id="29"
+                  >Send CV</a
+                >
+              </div>
+            </div>
+
+            <div class="navbar__col">
+              <div class="navbar__col__title"></div>
+              <div class="navbar__col__links">
+                <div class="navbar__news__card">
+                  <div class="navbar__news__card__left">
+                    <img
+                      src="img/blogimg1.jpg"
+                      alt="blogimg1"
+                      class="blogimg1"
+                    />
+                  </div>
+                  <div class="navbar__news__card__right">
+                    <div class="news__card__right__top">
+                      <div class="date" id="30">Socials</div>
+                      <div class="date" id="31">10.09.2024</div>
+                    </div>
+                    <div class="news__card__right__bottom">
+                      <div class="card__nav__title" id="32">
+                        Who Won the Race?
+                      </div>
+                      <div class="card__nav__text" id="33">
+                        We can sometimes use logic to stretch a little
+                        information a long way. Can these small clues tell us
+                        everything we need to know about who won this
+                        competition?
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="navbar__inner" id="blog">
+            <div class="navbar__col">
+              <div class="navbar__col__title"></div>
+              <div class="navbar__col__links">
+                <a class="navbar__col__link" href="/news.html" id="34"
+                  >Go to the articles list</a
+                >
+              </div>
+            </div>
+
+            <div class="navbar__col">
+              <div class="navbar__col__title"></div>
+              <div class="navbar__col__links">
+                <div class="navbar__news__card">
+                  <div class="navbar__news__card__left">
+                    <img
+                      src="img/blogimg1.jpg"
+                      alt="blogimg1"
+                      class="blogimg1"
+                    />
+                  </div>
+                  <div class="navbar__news__card__right">
+                    <div class="news__card__right__top">
+                      <div class="date" id="35">Socials</div>
+                      <div class="date" id="36">10.09.2024</div>
+                    </div>
+                    <div class="news__card__right__bottom">
+                      <div class="card__nav__title" id="37">
+                        Who Won the Race?
+                      </div>
+                      <div class="card__nav__text" id="38">
+                        We can sometimes use logic to stretch a little
+                        information a long way. Can these small clues tell us
+                        everything we need to know about who won this
+                        competition?
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="wrapper">
+          <div class="bottom__nav">
+            <div class="bn__item">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M5.95167 3.9978C3.91766 3.9978 2.32568 4.5118 2.04468 6.46679C1.95468 7.09279 2.15267 7.70881 2.60767 8.1538C2.83367 8.3748 3.07267 8.6378 3.38867 8.9038C4.18168 9.5728 5.19268 10.3248 6.13868 10.9978C8.74168 12.8478 10.7967 13.9978 12.0137 13.9978C13.2307 13.9978 15.2857 12.8478 17.8887 10.9978C18.8357 10.3248 19.8467 9.5718 20.6387 8.9038C20.9547 8.6378 21.1937 8.3758 21.4197 8.1538C21.8747 7.70881 22.0727 7.09279 21.9827 6.46679C21.7017 4.5118 20.1097 3.9978 18.0757 3.9978H5.95167ZM2.01367 10.1538V15.9978C2.01367 18.2068 3.80467 19.9978 6.01368 19.9978H18.0137C20.2227 19.9978 22.0137 18.2068 22.0137 15.9978V10.1538C21.1937 10.9328 20.2777 11.7368 18.9827 12.6538C16.1467 14.6618 13.5997 15.9978 12.0137 15.9978C10.4277 15.9978 7.88069 14.6618 5.04468 12.6538C3.74868 11.7368 2.83367 10.9328 2.01367 10.1538Z"
+                  fill="#434343"
+                />
+              </svg>
+              <div class="email">info@finlaw.com</div>
+            </div>
+
+            <div class="bn__item">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="25"
+                height="24"
+                viewBox="0 0 25 24"
+                fill="none"
+              >
+                <path
+                  d="M21.7623 16.1325L17.3873 14.2575C17.2004 14.1778 16.9927 14.161 16.7954 14.2096C16.5982 14.2582 16.422 14.3696 16.2936 14.527L14.3561 16.8942C11.3153 15.4605 8.86824 13.0134 7.43457 9.97269L9.80176 8.03519C9.95944 7.90694 10.0711 7.73081 10.1197 7.53345C10.1683 7.3361 10.1513 7.12828 10.0713 6.94144L8.19629 2.56644C8.10844 2.36504 7.95307 2.2006 7.75697 2.10148C7.56087 2.00236 7.33633 1.97477 7.12207 2.02347L3.05957 2.96097C2.853 3.00868 2.66869 3.12499 2.53673 3.29093C2.40478 3.45687 2.33296 3.66264 2.33301 3.87465C2.33301 13.8942 10.4541 21.9996 20.458 21.9996C20.6701 21.9998 20.8759 21.928 21.042 21.796C21.208 21.6641 21.3244 21.4797 21.3721 21.2731L22.3096 17.2106C22.358 16.9953 22.3298 16.7698 22.2299 16.5731C22.13 16.3763 21.9647 16.2205 21.7623 16.1325Z"
+                  fill="#434343"
+                />
+              </svg>
+              <div class="email">+994 123 11 99 24</div>
+            </div>
+
+            <div class="bn__item">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="25"
+                height="24"
+                viewBox="0 0 25 24"
+                fill="none"
+              >
+                <path
+                  d="M12.667 2C7.14449 2 2.66699 6.4775 2.66699 12C2.66699 17.5225 7.14449 22 12.667 22C18.1895 22 22.667 17.5225 22.667 12C22.667 6.4775 18.1895 2 12.667 2ZM12.667 7C13.357 7 13.917 7.56 13.917 8.25V11.4525L16.0657 13.6013C16.5532 14.09 16.5532 14.91 16.0657 15.3987C15.577 15.8862 14.757 15.8862 14.2682 15.3987L11.7682 12.8987C11.5345 12.6637 11.417 12.3313 11.417 12V8.25C11.417 7.56 11.977 7 12.667 7Z"
+                  fill="#434343"
+                  stroke="#434343"
+                  stroke-width="0.002"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <div class="email">Mon-Fri 9am-5pm</div>
+            </div>
+
+            <div class="bn__item">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M22 12.0022C22.0004 10.091 21.4532 8.2198 20.4231 6.61003C19.393 5.00026 17.9232 3.71938 16.1877 2.91906C14.4522 2.11874 12.5237 1.8325 10.6305 2.09422C8.73739 2.35595 6.9589 3.15468 5.50564 4.39585C4.05237 5.63701 2.98521 7.26863 2.4305 9.0975C1.87578 10.9264 1.85676 12.8759 2.37568 14.7152C2.8946 16.5546 3.92973 18.2067 5.35849 19.476C6.78726 20.7453 8.54983 21.5786 10.4375 21.8772V14.8922H7.89875V12.0022H10.4375V9.79843C10.3828 9.28399 10.442 8.76382 10.6108 8.2748C10.7796 7.78577 11.0539 7.33986 11.4142 6.96866C11.7745 6.59746 12.2121 6.31007 12.6959 6.12684C13.1797 5.94362 13.6979 5.86905 14.2137 5.90843C14.9638 5.91828 15.7121 5.98346 16.4525 6.10343V8.56718H15.1925C14.9779 8.53911 14.7597 8.55967 14.554 8.62733C14.3484 8.69498 14.1607 8.80801 14.0046 8.95804C13.8486 9.10807 13.7283 9.29127 13.6526 9.49408C13.577 9.69689 13.5479 9.91411 13.5675 10.1297V12.0047H16.3412L15.8975 14.8947H13.5625V21.8834C15.9153 21.5112 18.058 20.3114 19.6048 18.4999C21.1516 16.6884 22.001 14.3842 22 12.0022Z"
+                  fill="#434343"
+                />
+              </svg>
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M20.2143 2H2.83333C2.35714 2 2 2.35714 2 2.83333V20.3333C2 20.6905 2.35714 21.0476 2.83333 21.0476H20.3333C20.8095 21.0476 21.1667 20.6905 21.1667 20.2143V2.83333C21.0476 2.35714 20.6905 2 20.2143 2ZM7.59524 18.1905H4.85714V9.14286H7.71429V18.1905H7.59524ZM6.28571 7.95238C5.33333 7.95238 4.61905 7.11905 4.61905 6.28571C4.61905 5.33333 5.33333 4.61905 6.28571 4.61905C7.23809 4.61905 7.95238 5.33333 7.95238 6.28571C7.83333 7.11905 7.11905 7.95238 6.28571 7.95238ZM18.1905 18.1905H15.3333V13.7857C15.3333 12.7143 15.3333 11.4048 13.9048 11.4048C12.4762 11.4048 12.2381 12.5952 12.2381 13.7857V18.3095H9.38095V9.14286H12.119V10.3333C12.4762 9.61905 13.4286 8.90476 14.7381 8.90476C17.5952 8.90476 18.0714 10.8095 18.0714 13.1905V18.1905H18.1905Z"
+                  fill="#434343"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="navbar__mobile">
+        <div class="logo">
+          <a href="/index.html">
+            <img src="img/logo.png" alt="logo" />
+          </a>
+        </div>
+        <div class="menu" onclick="openMobileMenu()">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+          >
+            <path
+              d="M2.99902 6.10352C2.44702 6.10352 1.99902 6.55152 1.99902 7.10352C1.99902 7.65552 2.44702 8.10352 2.99902 8.10352H20.999C21.551 8.10352 21.999 7.65552 21.999 7.10352C21.999 6.55152 21.551 6.10352 20.999 6.10352H2.99902ZM2.99902 11.1035C2.44702 11.1035 1.99902 11.5515 1.99902 12.1035C1.99902 12.6555 2.44702 13.1035 2.99902 13.1035H20.999C21.551 13.1035 21.999 12.6555 21.999 12.1035C21.999 11.5515 21.551 11.1035 20.999 11.1035H2.99902ZM2.99902 16.1035C2.44702 16.1035 1.99902 16.5515 1.99902 17.1035C1.99902 17.6555 2.44702 18.1035 2.99902 18.1035H20.999C21.551 18.1035 21.999 17.6555 21.999 17.1035C21.999 16.5515 21.551 16.1035 20.999 16.1035H2.99902Z"
+              fill="#434343"
+            />
+          </svg>
+        </div>
+      </div>
+      <div class="navbar__mobile__content" id="mobileMenu">
+        <div class="navbar__mobile ngl">
+          <div class="logo">
+            <a href="/index.html">
+              <img src="img/logo.png" alt="logo" />
+            </a>
+          </div>
+          <div class="menu" onclick="closeMobileMenu()">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <path
+                d="M4.9941 3.90625C4.7382 3.90625 4.4706 3.99226 4.2753 4.18726C3.8848 4.57826 3.8848 5.23424 4.2753 5.62524L10.5566 11.9062L4.2753 18.1873C3.8848 18.5783 3.8848 19.2342 4.2753 19.6252C4.6659 20.0152 5.3223 20.0152 5.7129 19.6252L11.9941 13.3443L18.2753 19.6252C18.6659 20.0152 19.3223 20.0152 19.7129 19.6252C20.1034 19.2342 20.1034 18.5783 19.7129 18.1873L13.4316 11.9062L19.7129 5.62524C20.1034 5.23424 20.1034 4.57826 19.7129 4.18726C19.5176 3.99226 19.2499 3.90625 18.9941 3.90625C18.7382 3.90625 18.4707 3.99226 18.2753 4.18726L11.9941 10.4682L5.7129 4.18726C5.5176 3.99226 5.25 3.90625 4.9941 3.90625Z"
+                fill="#434343"
+              />
+            </svg>
+          </div>
+        </div>
+        <div class="navbar__mobile__links">
+          <a href="/service.html" class="navbar__mobile__link" id="39">
+            Services
+          </a>
+
+          <a href="/about.html" class="navbar__mobile__link" id="40">
+            About us
+          </a>
+
+          <a href="/career.html" class="navbar__mobile__link" id="41">
+            Careers
+          </a>
+
+          <a href="/news.html" class="navbar__mobile__link" id="42"> News </a>
+          <a href="/contacts.html" class="navbar__mobile__link" id="43">
+            Contacts
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrapper">
+      <div class="page__title" id="90">News</div>
+    </div>
+    <div class="wrapper">
+      <section class="news__cards" id="cards__view"></section>
+    </div>
+
+    <footer>
+      <div class="wrapper">
+        <div class="footer__top">
+          <div class="footer__left">
+            <div class="footer__col">
+              <div class="footer__col__title" id="f1">Services</div>
+              <div class="footer__col__links">
+                <a href="#" class="footer__col__link" id="f2"
+                  >Financial services</a
+                >
+                <a href="#" class="footer__col__link" id="f3">Legal services</a>
+              </div>
+            </div>
+
+            <div class="footer__col">
+              <div class="footer__col__title" id="f4">About Us</div>
+              <div class="footer__col__links">
+                <a href="#" class="footer__col__link" id="f5">Who we are</a>
+                <a href="/contacts.html" class="footer__col__link" id="f6"
+                  >Contacts</a
+                >
+                <a href="#" class="footer__col__link" id="f7"
+                  >Governance & Compliance</a
+                >
+                <a href="#" class="footer__col__link" id="f8">Blog/News</a>
+                <a href="#" class="footer__col__link" if="f9">Careers</a>
+              </div>
+            </div>
+          </div>
+          <div class="footer__right">
+            <div class="footer__social__links">
+              <a id="facebook" href="#" class="footer__social">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="25"
+                  viewBox="0 0 24 25"
+                  fill="none"
+                >
+                  <path
+                    d="M22 12.096C22.0004 10.1848 21.4532 8.31355 20.4231 6.70378C19.393 5.09401 17.9232 3.81313 16.1877 3.01281C14.4522 2.21249 12.5237 1.92625 10.6305 2.18797C8.73739 2.4497 6.9589 3.24843 5.50564 4.4896C4.05237 5.73076 2.98521 7.36238 2.4305 9.19125C1.87578 11.0201 1.85676 12.9697 2.37568 14.809C2.8946 16.6484 3.92973 18.3004 5.35849 19.5697C6.78726 20.8391 8.54983 21.6723 10.4375 21.9709V14.986H7.89875V12.096H10.4375V9.89218C10.3828 9.37774 10.442 8.85757 10.6108 8.36855C10.7796 7.87952 11.0539 7.43361 11.4142 7.06241C11.7745 6.69121 12.2121 6.40382 12.6959 6.22059C13.1797 6.03737 13.6979 5.9628 14.2137 6.00218C14.9638 6.01203 15.7121 6.07721 16.4525 6.19718V8.66093H15.1925C14.9779 8.63286 14.7597 8.65342 14.554 8.72108C14.3484 8.78873 14.1607 8.90176 14.0046 9.05179C13.8486 9.20182 13.7283 9.38502 13.6526 9.58783C13.577 9.79064 13.5479 10.0079 13.5675 10.2234V12.0984H16.3412L15.8975 14.9885H13.5625V21.9771C15.9153 21.6049 18.058 20.4052 19.6048 18.5937C21.1516 16.7822 22.001 14.478 22 12.096Z"
+                    fill="#434343"
+                  />
+                </svg>
+              </a>
+              <a id="linkedin" href="#" class="footer__social">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="25"
+                  viewBox="0 0 24 25"
+                  fill="none"
+                >
+                  <path
+                    d="M20.2143 2.09375H2.83333C2.35714 2.09375 2 2.45089 2 2.92708V20.4271C2 20.7842 2.35714 21.1414 2.83333 21.1414H20.3333C20.8095 21.1414 21.1667 20.7842 21.1667 20.308V2.92708C21.0476 2.45089 20.6905 2.09375 20.2143 2.09375ZM7.59524 18.2842H4.85714V9.23661H7.71429V18.2842H7.59524ZM6.28571 8.04613C5.33333 8.04613 4.61905 7.2128 4.61905 6.37946C4.61905 5.42708 5.33333 4.7128 6.28571 4.7128C7.23809 4.7128 7.95238 5.42708 7.95238 6.37946C7.83333 7.2128 7.11905 8.04613 6.28571 8.04613ZM18.1905 18.2842H15.3333V13.8795C15.3333 12.808 15.3333 11.4985 13.9048 11.4985C12.4762 11.4985 12.2381 12.689 12.2381 13.8795V18.4033H9.38095V9.23661H12.119V10.4271C12.4762 9.7128 13.4286 8.99851 14.7381 8.99851C17.5952 8.99851 18.0714 10.9033 18.0714 13.2842V18.2842H18.1905Z"
+                    fill="#434343"
+                  />
+                </svg>
+              </a>
+              <a id="twitter" href="#" class="footer__social">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="25"
+                  viewBox="0 0 24 25"
+                  fill="none"
+                >
+                  <path
+                    d="M18.7526 8.5828C18.7634 8.73592 18.7634 8.88907 18.7634 9.04219C18.7634 13.7125 15.2577 19.0938 8.85027 19.0938C6.87627 19.0938 5.04252 18.514 3.5 17.5078C3.78047 17.5406 4.05011 17.5516 4.34137 17.5516C5.97016 17.5516 7.46955 16.9938 8.66689 16.0422C7.13516 16.0094 5.85152 14.9922 5.40925 13.5922C5.62501 13.625 5.84073 13.6469 6.06728 13.6469C6.38008 13.6469 6.69292 13.6031 6.98415 13.5266C5.3877 13.1984 4.19033 11.7766 4.19033 10.0594V10.0156C4.65415 10.2781 5.19353 10.4422 5.76519 10.464C4.82674 9.82966 4.21191 8.74686 4.21191 7.52185C4.21191 6.86561 4.38447 6.26405 4.68652 5.73905C6.40163 7.88279 8.9797 9.28277 11.8705 9.43592C11.8166 9.17342 11.7842 8.90001 11.7842 8.62657C11.7842 6.67967 13.3376 5.09375 15.2684 5.09375C16.2716 5.09375 17.1776 5.52031 17.8141 6.20937C18.6015 6.05626 19.3566 5.76093 20.0254 5.35625C19.7665 6.17658 19.2164 6.86565 18.4937 7.30312C19.1948 7.22659 19.8744 7.02967 20.5 6.75626C20.0255 7.45623 19.4321 8.07965 18.7526 8.5828Z"
+                    fill="#434343"
+                  />
+                </svg>
+              </a>
+              <a id="instagram" href="#" class="footer__social inst">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="25"
+                  viewBox="0 0 24 25"
+                  fill="none"
+                >
+                  <path
+                    d="M17.1814 8.15879C17.8442 8.15879 18.3814 7.62153 18.3814 6.95879C18.3814 6.29605 17.8442 5.75879 17.1814 5.75879C16.5187 5.75879 15.9814 6.29605 15.9814 6.95879C15.9814 7.62153 16.5187 8.15879 17.1814 8.15879Z"
+                    fill="#434343"
+                  />
+                  <path
+                    d="M12 17.0938C9.2425 17.0938 7 14.8512 7 12.0938C7 9.33625 9.2425 7.09375 12 7.09375C14.7575 7.09375 17 9.33625 17 12.0938C17 14.8512 14.7575 17.0938 12 17.0938ZM12 9.59375C10.6213 9.59375 9.5 10.715 9.5 12.0938C9.5 13.4725 10.6213 14.5938 12 14.5938C13.3787 14.5938 14.5 13.4725 14.5 12.0938C14.5 10.715 13.3787 9.59375 12 9.59375Z"
+                    fill="#434343"
+                  />
+                  <path
+                    d="M17 22.0938H7C4.43 22.0938 2 19.6637 2 17.0938V7.09375C2 4.52375 4.43 2.09375 7 2.09375H17C19.57 2.09375 22 4.52375 22 7.09375V17.0938C22 19.6637 19.57 22.0938 17 22.0938ZM7 4.59375C5.83125 4.59375 4.5 5.925 4.5 7.09375V17.0938C4.5 18.285 5.80875 19.5938 7 19.5938H17C18.1688 19.5938 19.5 18.2626 19.5 17.0938V7.09375C19.5 5.925 18.1688 4.59375 17 4.59375H7Z"
+                    fill="#434343"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="footer__bot">
+          <div class="copyright">© FinLaw International Ltd. 2023</div>
+        </div>
+      </div>
+    </footer>
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-analytics.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyDZkUgYBDOLFoG7yd80m1KfponByNuCeko",
+        authDomain: "finlaw-77c29.firebaseapp.com",
+        projectId: "finlaw-77c29",
+        storageBucket: "finlaw-77c29.firebasestorage.app",
+        messagingSenderId: "778843505793",
+        appId: "1:778843505793:web:3c4462803dc0c7ef543980",
+        measurementId: "G-550RP9DZ3G",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+      firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="index.js" defer></script>
+    <script src="news.js"></script>
+  </body>
+</html>
